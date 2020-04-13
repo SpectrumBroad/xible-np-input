@@ -6,9 +6,14 @@
     "trigger": {
       "type": "trigger"
     },
+    "next": {
+      "type": "trigger",
+      "description": "If connected, instead of iterating as quickly as possible over the 'any' input values, 'next' has to be triggered before the next value in the 'any' input is processed."
+    },
     "any": {
       "assignsOutputType": "object",
-      "description": "The items to be processed."
+      "description": "The items to be processed.",
+      "assignsOutputTypes": ["item"]
     }
   },
   "outputs": {
@@ -16,8 +21,11 @@
       "type": "trigger",
       "description": "Triggers once per item being processed."
     },
+    "done": {
+      "type": "trigger",
+      "description": "Triggers once when all items are processed."
+    },
     "item": {
-      "type": "object",
       "description": "The current item being processed."
     }
   }
